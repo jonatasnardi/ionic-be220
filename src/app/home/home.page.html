@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img class="logo-image" src="assets/images/logo.png">
+    <ion-icon class="icon-notifications" name="notifications-outline"></ion-icon>
+    <span class="bullet-notification"></span>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" scrollY="true">
+
+  <div id="container">
+
+    <div class="banner-home">
+      <div class="wrapper">
+        <div class="profile-image">
+          <img src="assets/images/profile.png">
+        </div>
+        <div class="text">
+          <h2 class="name">Leonardo Santos</h2>
+          <h4 class="level">Nível Roxo</h4>
+        </div>
+      </div>
+
+      <div class="container-body-goals">
+        <a class="btn-home"><ion-icon class="icon" name="body-outline"></ion-icon> MEU CORPO</a>&nbsp;&nbsp;
+        <a class="btn-home"><ion-icon class="icon" name="trophy-outline"></ion-icon> OBJETIVOS E CONQUISTAS</a>
+      </div>
+    </div>
+
+    <app-block-title [title]="'PERSONAL ONLINE'" [isNew]="false"></app-block-title>
+
+    <ion-row class="ion-padding">
+      
+      <span class="subtitle"></span>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-slides pager="false" [options]="slideOpts" #slide
+              (ionSlideDidChange)="SlideDidChange(slider, slide)">
+              <ion-slide *ngFor="let s of slider.slidesItems">
+                <img [src]="s.image">
+                <div class="image-shadow">
+                  <div class="profile-image">
+                    <ion-icon class="icon" name="add-circle-outline"></ion-icon>
+                  </div>
+                  <div class="text">
+                    <h2 class="title">NOVO<br>TREINO</h2>
+                  </div>
+                </div>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+
+
+    <app-block-title [title]="'PROGRAMAS'" [isNew]="true"></app-block-title>
+
+    <ion-row class="ion-padding">
+
+      <span class="subtitle"></span>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-slides pager="false" [options]="slideOpts" #slide
+              (ionSlideDidChange)="SlideDidChange(slider, slide)">
+              <ion-slide *ngFor="let s of slider.slidesItems">
+                <img [src]="s.image">
+                <div class="image-shadow">
+                  <div class="text training">
+                    <h2 class="title">continuar treinando</h2>
+                  </div>
+                </div>
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-row>
+
+  </div>
+</ion-content>
